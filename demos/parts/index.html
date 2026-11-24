@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Parts Desk | Quote to Delivery</title><link rel="stylesheet" href="style.css"></head>
+<body><header><div class="brand">PARTS / DESK</div><span class="demo">Browser-only demonstration</span></header>
+<main><div class="heading"><div><p class="eyebrow">Industrial spare parts</p><h1>Correct part.<br>Clear next step.</h1><p class="intro">A quotation and fulfilment workflow with compatibility checks,<br>stock reservations and a visible order history.</p></div><div class="scope">Fictional models and prices<br>Currency: INR<br>Browser-only demonstration</div></div>
+<div class="stats" id="stats" aria-live="polite"></div>
+<div class="layout"><section class="panel"><h2>Create a quotation</h2><p class="muted">Confirm the machine before selecting a part.</p><form id="quote-form">
+<label for="buyer">Buyer reference</label><input id="buyer" required maxlength="60" value="Demo buyer A">
+<label for="model">Machine model</label><select id="model"><option>SIM-A100</option><option>SIM-B200</option></select>
+<label for="part">Compatible part</label><select id="part" required></select>
+<div class="row"><div><label for="qty">Quantity</label><input id="qty" type="number" min="1" max="1000" step="1" value="2" required></div><div><label for="discount">Discount %</label><input id="discount" type="number" min="0" max="10" step=".01" value="0" required></div></div>
+<div class="row"><div><label for="shipping">Shipping charge ₹</label><input id="shipping" type="number" min="0" max="10000" step=".01" value="100" required></div><div><label for="tax">Demo tax %</label><input id="tax" type="number" min="0" max="100" step=".01" value="18" required></div></div>
+<p class="hint">Tax applies to discounted merchandise plus shipping. This is an editable demonstration assumption, not a verified tax classification.</p>
+<button id="create" type="submit" class="primary">Create quotation</button><p id="error" role="alert"></p>
+</form></section>
+<section class="panel"><div class="queue-title"><div><h2>Quotation queue</h2><p class="muted">Approve, order, dispatch and confirm delivery.</p></div><button id="refresh" class="secondary">Refresh</button></div><div id="quotes"></div></section></div>
+<section class="panel stock-panel"><h2>Available stock</h2><p class="muted">Approval reserves units. Dispatch consumes them. Cancellation releases reservations.</p><div class="table-wrap"><table><thead><tr><th>Part</th><th>Model</th><th>Unit price</th><th>On hand</th><th>Reserved</th><th>Available</th></tr></thead><tbody id="stock"></tbody></table></div></section>
+<footer>Independent business-analysis portfolio project. All buyers, machine models, compatibility mappings and prices are fictional.</footer></main><script src="demo-engine.js"></script><script src="app.js"></script></body></html>
